@@ -1,0 +1,92 @@
+/* src/components/MenuRadial.css */
+.menu-radial {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1000;
+}
+
+.menu-btn {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--cor-destaque);
+  color: var(--fundo-principal);
+  border: none;
+  font-size: 30px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background-color 0.3s;
+  line-height: 1; /* Ajusta a altura da linha para centralizar melhor o ícone */
+}
+
+.menu-btn:hover {
+  background-color: var(--hover-destaque);
+}
+
+.menu-items {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  bottom: 70px;
+  right: 0;
+  transition: opacity 0.3s, visibility 0.3s;
+  opacity: 0;
+  visibility: hidden;
+}
+
+.menu-radial.open .menu-items {
+  opacity: 1;
+  visibility: visible;
+}
+
+.menu-item {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: var(--fundo-secundario);
+  color: var(--texto-principal);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  font-size: 24px;
+  margin: 10px 0;
+  transition: transform 0.3s ease, opacity 0.3s ease, background-color 0.3s;
+  opacity: 0;
+  transform: scale(0);
+  pointer-events: none;
+}
+
+.menu-radial.open .menu-item {
+  opacity: 1;
+  transform: scale(1);
+  pointer-events: all;
+}
+
+.menu-item:hover {
+  background-color: var(--cor-destaque); /* Cor de fundo ao passar o mouse */
+  color: var(--fundo-principal); /* Cor do ícone ao passar o mouse */
+}
+
+.menu-item.active {
+  background-color: var(--cor-destaque); /* Cor de fundo para a página ativa */
+  color: var(--fundo-principal); /* Cor do ícone para a página ativa */
+}
+
+.menu-item:nth-child(1) {
+  transform: translate(0, -70px) scale(0);
+}
+.menu-item:nth-child(2) {
+  transform: translate(60px, -60px) scale(0);
+}
+.menu-item:nth-child(3) {
+  transform: translate(70px, 0) scale(0);
+}
+.menu-item:nth-child(4) {
+  transform: translate(60px, 60px) scale(0);
+}

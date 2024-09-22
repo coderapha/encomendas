@@ -1,0 +1,205 @@
+/* src/global.css */
+
+/* Definição de Variáveis */
+:root {
+  --fundo-principal: #1e1e1e; /* Preto suave */
+  --fundo-secundario: #2b2b2b; /* Cinza escuro */
+  --texto-principal: #e0e0e0; /* Cinza claro */
+  --texto-secundario: #b0b0b0; /* Cinza médio */
+  --cor-destaque: #00bcd4; /* Ciano vibrante */
+  --hover-destaque: #0097a7; /* Ciano mais escuro para hover */
+  --cor-secundaria: #7c4dff; /* Roxo Andromeda */
+}
+
+/* Configurações Gerais */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  background-color: var(--fundo-principal);
+  color: var(--texto-principal);
+  padding: 20px;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+h1 {
+  color: var(--texto-principal);
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: var(--texto-principal);
+  font-size: 1.8em;
+  margin-bottom: 20px;
+}
+
+/* Container Principal */
+.container {
+  max-width: 1200px; /* Ajuste o valor conforme necessário */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Estilo de Formulários e Tabelas */
+form,
+table {
+  background-color: var(--fundo-secundario);
+  padding: 25px; /* Mesmo padding para formulário e tabela */
+  margin-bottom: 30px;
+}
+
+form {
+  border: 1px solid #3a3a3a; /* Opcional: Adiciona uma borda ao formulário para separação visual */
+  margin-bottom: 20px;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #3a3a3a;
+  background-color: #3a3a3a;
+  color: var(--texto-principal);
+  font-size: 1.1em;
+  border-radius: 0; /* Remove bordas arredondadas */
+}
+
+input::placeholder {
+  color: var(--texto-secundario);
+}
+
+.item-form {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.item-form input,
+.item-form select {
+  flex: 1; /* Faz com que os campos preencham o espaço disponível */
+  margin-right: 10px; /* Espaçamento entre os campos */
+  box-sizing: border-box; /* Inclui padding e borda na largura total */
+}
+
+.icon-button {
+  background: var(--cor-destaque);
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  width: 40px; /* Ajustado para garantir forma redonda */
+  height: 40px; /* Ajustado para garantir forma redonda */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  margin-right: 10px;
+  font-size: 18px; /* Ajustado para melhor visualização */
+}
+
+.add-button {
+  margin-top: 10px;
+}
+
+.remove-button {
+  margin-left: 10px;
+}
+
+button {
+  width: 100%;
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: var(--cor-destaque);
+  color: var(--fundo-principal);
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+button:hover {
+  background-color: var(--hover-destaque);
+}
+
+/* Seções do Main */
+main {
+  max-width: 100%; /* Ocupa toda a largura do container */
+  margin: 0 auto;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+/* Tabelas */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0; /* Ajusta a margem superior para igualar ao formulário */
+}
+
+th,
+td {
+  padding: 12px;
+  border: none; /* Remove borda branca */
+  text-align: left;
+}
+
+thead {
+  background-color: #3a3a3a;
+}
+
+thead th {
+  color: var(--cor-destaque);
+  padding: 12px;
+  text-align: left;
+}
+
+tbody td {
+  padding: 10px;
+  border-top: 1px solid #3a3a3a;
+  color: var(--texto-principal);
+}
+
+tbody tr:nth-child(even) {
+  background-color: #242424;
+}
+
+a {
+  color: var(--cor-destaque);
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+a:hover {
+  color: var(--hover-destaque);
+}
+
+/* Responsividade */
+@media (max-width: 768px) {
+  .container {
+    margin: 10px;
+  }
+
+  main {
+    max-width: 100%; /* Ajuste conforme necessário para dispositivos móveis */
+  }
+
+  form,
+  table {
+    margin: 0; /* Remove margens extras */
+  }
+}
